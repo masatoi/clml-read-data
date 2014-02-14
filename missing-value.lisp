@@ -47,14 +47,17 @@
 (defparameter *nan* 
     #+allegro excl:*nan-double*
     #+sbcl #.(- #.sb-ext:double-float-positive-infinity #.sb-ext:double-float-positive-infinity)
+    #+ccl ccl::double-float-nan
     #+lispworks system::*double-float-nan*)
 (defparameter *+inf*
     #+allegro excl:*infinity-double*
     #+sbcl #.sb-ext:double-float-positive-infinity
+    #+ccl ccl::double-float-positive-infinity
     #+lispworks 1D++0)
 (defparameter *-inf*
     #+allegro excl:*negative-infinity-double*
     #+sbcl #.sb-ext:double-float-negative-infinity
+    #+ccl ccl::double-float-negative-infinity
     #+lispworks -1D++0)
 ;; NaN for category, assume that categorical data is serialized by positive integer
 (defparameter *c-nan* 0)
